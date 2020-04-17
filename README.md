@@ -3,8 +3,8 @@
 You need to copy the github repo and install the requested python librairies.
 
 ```bash
-git clone "https://github.com/vltn17/Starting-project-automation.git"
-cd Starting-project-automation
+git clone "https://github.com/vltn17/StartingProjectAutomation.git"
+cd StartingProjectPutomation
 
 pip install PyGithub
 ```
@@ -32,4 +32,4 @@ createProject.cmd
 python <the path to the python script .py> %1 %2 %3
 ```
 
-!!! Module symbols with number are very important. There pass argument to the python script. 
+!!! Modulo symbols with number are very important. There pass argument to the python script. 
