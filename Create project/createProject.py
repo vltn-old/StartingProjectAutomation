@@ -76,14 +76,14 @@ def createProject(arguments):
 
     print('Do the innitial commit');
     os.system('git add .');
-    os.system('git commit -m "Initial commit');
+    os.system('git commit -m "Initial commit"');
     os.system('git push -u origin master');
 
 
 
 def getGithubLogin():
     try:
-        file = open("githubLogin.txt", "r");
+        file = open("C:/users/valen/documents/code/projets/startingprojectautomation/githubLogin.txt", "r");
         fileData = file.readlines();
 
         return fileData;
@@ -97,7 +97,7 @@ def getGithubLogin():
 
 def getPath():
     try:
-        file = open("path.txt", "r");
+        file = open("C:/users/valen/documents/code/projets/startingprojectautomation/path.txt", "r");
         fileData = file.readlines();
 
         return fileData;
@@ -120,7 +120,7 @@ def setPath():
     print("What is your test project path ?");
     testPath = input();
 
-    file = open("path.txt","a+");
+    file = open("C:/users/valen/documents/code/projets/startingprojectautomation/path.txt","a+");
     file.write(normalPath + "\n");
     file.write(testPath + "\n");
     file.close();
@@ -134,7 +134,7 @@ def setLoginInfos():
     print("What is your github account password ?");
     password = input();
 
-    file = open("githubLogin.txt","a+");
+    file = open("C:/users/valen/documents/code/projets/startingprojectautomation/githubLogin.txt","a+");
     file.write(email + "\n");
     file.write(password + "\n");
     file.close();
