@@ -9,11 +9,11 @@ from github import Github;
 #   _ you can type --help for more infos about the usage of that script (exemple: createProject --help)
 
 def createProject(arguments):
-    email = getGithubLogin()[0][:-len("\n")];
-    mdp = getGithubLogin()[1][:-len("\n")];
+    email = getGithubLogin(arguments)[0][:-len("\n")];
+    mdp = getGithubLogin(arguments)[1][:-len("\n")];
 
-    normalPath = getPath()[0][:-len("\n")];
-    testPath = getPath()[1][:-len("\n")];
+    normalPath = getPath(arguments)[0][:-len("\n")];
+    testPath = getPath(arguments)[1][:-len("\n")];
 
 
     if email == "False" or email == "False" or email == "False" or email == "False":
@@ -81,9 +81,9 @@ def createProject(arguments):
 
 
 
-def getGithubLogin():
+def getGithubLogin(arguments):
     try:
-        file = open("C:/users/valen/documents/code/projets/startingprojectautomation/githubLogin.txt", "r");
+        file = open(arguments[0][:-len("Create project/createProject.py")] + "githubLogin.txt", "r");
         fileData = file.readlines();
 
         return fileData;
@@ -95,9 +95,9 @@ def getGithubLogin():
 
         return "False";
 
-def getPath():
+def getPath(arguments):
     try:
-        file = open("C:/users/valen/documents/code/projets/startingprojectautomation/path.txt", "r");
+        file = open(arguments[0][:-len("Create project/createProject.py")] + "path.txt", "r");
         fileData = file.readlines();
 
         return fileData;
@@ -111,7 +111,7 @@ def getPath():
 
 
 
-def setPath():
+def setPath(arguments):
     print("What is your common project path ?");
     normalPath = input();
 
@@ -120,12 +120,12 @@ def setPath():
     print("What is your test project path ?");
     testPath = input();
 
-    file = open("C:/users/valen/documents/code/projets/startingprojectautomation/path.txt","a+");
+    file = open(arguments[0][:-len("Create project/createProject.py")] + "path.txt","a+");
     file.write(normalPath + "\n");
     file.write(testPath + "\n");
     file.close();
 
-def setLoginInfos():
+def setLoginInfos(arguments):
     print("What is your github account email adress ?");
     email = input();
 
@@ -134,7 +134,7 @@ def setLoginInfos():
     print("What is your github account password ?");
     password = input();
 
-    file = open("C:/users/valen/documents/code/projets/startingprojectautomation/githubLogin.txt","a+");
+    file = open(arguments[0][:-len("Create project/createProject.py")] + "githubLogin.txt","a+");
     file.write(email + "\n");
     file.write(password + "\n");
     file.close();
@@ -174,9 +174,9 @@ def main():
     if "--help" in arguments: # run the help function
         help();
     elif "--setPath" in arguments: # run setPath function
-        setPath();
+        setPath(arguments);
     elif "--setLoginInfos" in arguments: # run setLoginInfos function
-        setLoginInfos();
+        setLoginInfos(arguments);
     else: # create the project
         createProject(arguments);
 
