@@ -145,7 +145,7 @@ def help(): # function help that list all function and there utilisation
     print();
 
     print('How to use create project:');
-    print("    _ createProject <project name> <optinal>");
+    print("    _ createProject <project name> <optional>");
     print("    _ createProject --setPath");
     print("    _ createProject --setLoginInfos");
     print("    _ createProject --help");
