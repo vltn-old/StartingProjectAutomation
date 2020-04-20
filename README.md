@@ -32,4 +32,4 @@ createProject.cmd
 python <the path to the python script .py> %1 %2 %3
 ```
 
-!!! Modulo symbols with number are very important. There pass argument to the python script. 
+!!! Modulo symbols with number are very important. There pass argument to the python script..
